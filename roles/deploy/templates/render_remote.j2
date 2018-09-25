@@ -7,6 +7,11 @@ router ospf {{process_id}}
 {% endfor %}
 
 
+interface tunnel0
+ bfd interval 50 min_rx 50 multiplier 5 
+ ip ospf bfd
+
+
 {% for intf_id, properties in loopback.items() %}
 interface Loopback{{ intf_id }}
  description {{ properties.desc }}
