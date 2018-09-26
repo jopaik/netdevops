@@ -2,7 +2,7 @@ site: 1
 snmp:
   ro:
     - Site1-Snmpro
-    - Ansible123
+    - AnsibleS3cure
   rw:
     - site1-AnsibleFest2018
   contact:
