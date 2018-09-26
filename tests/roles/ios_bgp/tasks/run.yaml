@@ -4,6 +4,7 @@
       - show ip bgp neighbors {{ network.0.peer_ip }} advertised-routes
     wait_for:
       - result[0] contains '{{ network.1.net }}'
+    interval: 10
   with_subelements:
     - "{{ neighbors }}"
     - advertised_networks
