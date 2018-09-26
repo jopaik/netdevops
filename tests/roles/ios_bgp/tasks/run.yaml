@@ -14,7 +14,6 @@
     label: "network {{ network.1.net }}"
   when: 'pipeline == "full"'
 
-
 - name: "Validate entries for bgp networks in route table"
   ios_command:
     commands:
