@@ -1,13 +1,15 @@
 - name: "Validate neighbors session state"
   ios_command:
     commands: "show ip bgp neighbors {{ neighbor.peer_ip }}"
-    wait_for: "result[0] contains 'BGP state = Established, up'"
+    wait_for:
+      - result[0] contains 'Established, up'
     interval: 10
   loop: "{{ neighbors }}"
   loop_control:
     loop_var: neighbor
     label: "neighbor {{ neighbor.peer_ip }}"
   when: 'pipeline == "full"'
+
 
 - name: "Validate advertised networks by neighbors"
   ios_command:
