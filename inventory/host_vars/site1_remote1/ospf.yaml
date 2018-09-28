@@ -6,3 +6,5 @@ networks:
     wc: "{{ loopback.1.net | ipaddr('hostmask') }}"
   - net: "{{ tunnel_network | ipaddr('network') }}"
     wc: "{{ tunnel_network | ipaddr('hostmask') }}"
+  - net: "{{ loopback.2.net | ipaddr('network') }}"
+    wc: "{{ loopback.2.net | ipaddr('hostmask') }}"
